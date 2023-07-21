@@ -1,0 +1,510 @@
+@import '../style';
+@mixin sp {
+  @media (max-width: (480px)) {
+      @content;
+  }
+}
+/*背景の設定*/
+
+body {
+  background-image: url("../../images/home_background.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.topPagePosition{
+  position:relative;
+}
+
+.slogan{
+  position: absolute;
+  margin-left: calc(50% - 50vw);
+  margin: 20px;
+	width: 98%;
+	height: 150%;
+}
+
+.sloganText{
+  position: relative;
+}
+
+h1.topPage{
+  position:relative;
+  top: 35px;
+    font-size: 4rem;
+
+  padding: 0.2em 0.5em;
+
+  background-color: orange;
+  color: white;
+  font-weight: lighter;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.56);
+    text-align: center;
+    z-index: 1;
+}
+
+h2.topPage{
+  font-size: 2rem;
+  text-align: center;
+}
+
+.topImages{
+  position:relative;
+  left: 80px;
+  bottom: 110px;
+  width: 90%;
+  height: 100px;
+  z-index: 0;
+}
+
+.planningDetails{
+  width: calc(100% / 2);
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.planPage{
+  font-size: 5rem;
+  text-align: center;
+  color: #2C3E5C;
+}
+
+
+
+/*スローガン背景色*/
+.timeBackground{
+  position: relative;
+  width: 100%;
+  padding-top: 80%;
+  background: orange;
+  top: 20rem;
+ z-index: auto;
+}
+
+/*スローガン見出し設定*/
+.Srg {
+  position: relative;
+   margin: 30px;
+   text-align: center;
+ }
+ 
+.Srg:before,
+.Srg:after {
+   position: absolute;
+   z-index: 0;
+   bottom: -10px;
+   display: block;
+   content: '';
+   border: 1em solid #d90606;
+ }
+ 
+ .Srg:before {
+   left: -30px;
+   border-left-width: 15px;
+   border-left-color: transparent;
+ }
+ 
+ .Srg:after {
+   right: -30px;
+   border-right-width: 15px;
+   border-right-color: transparent;
+ }
+ 
+ .Srg span {
+   position: relative;
+   z-index: 1;
+   display: block;
+   padding: 1rem 2rem;
+   color: #fff;
+   background: #a02020;
+ }
+ 
+ .Srg span:before,
+ .Srg span:after {
+   position: absolute;
+   bottom: -20px;
+   display: block;
+   width: 10px;
+   height: 10px;
+   content: '';
+   border-style: solid;
+   border-color: #b70505 transparent transparent transparent;
+ }
+ 
+ .Srg span:before {
+   left: 0;
+   border-width: 10px 0 0 10px;
+ }
+ 
+ .Srg span:after {
+   right: 0;
+   border-width: 10px 10px 0 0;
+ }
+
+
+/*テーブルの設定*/
+table {
+  // table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: none;
+}
+th,td {
+  border: 1px solid #fff;
+}
+th {
+  width: 70px;
+  font-size:12px;
+  color: #fff;
+  text-align: center;
+  background-color: #2C3E5C;
+  vertical-align: top;
+}
+td {
+  height: 25px;
+  padding: 0 10px;
+  font-size: 14px;
+  text-align: center;
+  background: #f3f4ef;
+}
+
+.borderNone {
+  border-bottom: 1px solid #2C3E5C;
+}
+
+.color1{
+  background: #d8c8ae;
+}
+
+.color2{
+  background: #4CDAFC;
+}
+
+.line1{
+  height: 25px;
+}
+
+.line2{
+  height: 50px;
+}
+
+/*タイムテーブル見出しの見た目の設定*/
+
+.timeTableParent {
+  display: flex;
+  flex-direction: column;
+  background-color: #e6b422;
+  padding: 2vh 0 5vh 0;
+  margin-top: 20vh;
+  @include sp {
+    margin-top: 5vh;
+  }
+}
+
+// section Template
+.section {
+  margin: 10vh 0;
+  background-color: #e6b422;
+  padding: 5vh 5vw;
+  display: flex;
+  flex-direction: column;
+  @include sp {
+    padding-left: 0vw;
+    padding-right: 0vw;
+  }
+}
+.sectionHeadline {
+  text-align: center;
+  font-size: 2rem;
+  color: #2C3E5C;
+}
+.youtubeEmbed {
+  margin-right: 5vw;
+  margin-top: 3vh;
+  width: 90vw;
+  height: 50.625vw;
+  @include sp {
+    margin: 0 3vw;
+  }
+}
+.sectionDescription {
+  text-align: center;
+  @include sp {
+    margin: 0 2vw;
+    margin-top: 3vh;
+  }
+}
+.spbr{
+  display: none;
+  @include sp{
+    display: inline;
+  }
+}
+
+.classroom {
+  text-align: center;
+}
+
+h2+h2 {
+  margin-top: 5vh;
+}
+
+.timeTableTop{
+  // position: relative;
+  margin-bottom: 2vh;
+  font-size: 2rem;
+  color: #2C3E5C;
+  text-align: center;
+  // top: 30rem;
+  z-index: 3;
+}
+
+
+/*タイムテーブル教室場所の見た目*/
+
+.captionsize {
+  font-size: 150%;
+  text-align: center;
+  // position:relative;
+  // left: 80px;
+  padding: 1px 1px;
+  // width: 30vw;
+  // -webkit-transform: skew(-15deg);
+  transform: skew(-15deg) translateX(0.2vw);
+  color: #fff;
+  // background-image: -webkit-gradient(linear, left top, right top, from(#209cff), to(#68e0cf));
+  // background-image: -webkit-linear-gradient(left, #209cff 0%, #68e0cf 100%);
+  background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
+  @include sp{
+    font-size: 100%;
+    width: 89vw;
+    margin-left: 1vw;
+  }
+}
+
+.captionsize:first-letter {
+  font-size: 150%;
+  color: yellow;
+}
+
+/*テーブルを並べる設定*/
+
+.timeTable{
+  display: flex;
+  justify-content: center;
+  @include sp {
+    flex-direction: column;
+  }
+}
+
+.timeTablePosition{
+  width: 80%;
+position:relative;
+left: 10rem;
+bottom: 30rem;
+z-index: 4;
+}
+
+/*擬似的白背景を作成*/
+.whiteBackground{
+  position: relative;
+  width: 100%;
+  height: 2500px;
+  background: rgba(255, 255, 255, 0.651);
+  top: 80rem;
+ z-index: auto;
+}
+
+/*全体エリアの設定*/
+
+
+/*位置調節設定*/
+
+.layerPlan{
+position: relative;
+bottom: 50rem;
+z-index: 2;
+}
+
+.plan{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/*各エリアの配置の設定*/
+.planningDetails:nth-child(1){
+  background-color: #e6b422;
+}
+
+.planningDetails:nth-child(2){
+  background-color: #e6b422;
+}
+
+.planningDetails:nth-child(3){
+  background-color: #e6b422;
+}
+
+.planningDetails:nth-child(4){
+  background-color: #e6b422;
+}
+
+.planningDetails:nth-child(5){
+  background-color: #e6b422;
+}
+
+.planningDetails:nth-child(6){
+  background-color: #e6b422;
+}
+
+
+
+
+
+.a{
+  font-size: 300px;
+}
+
+.timeContent {
+  width: 30vw;
+  margin: 0 0.5vw;
+  display: flex;
+  flex-direction: column;
+  @include sp {
+    margin: 0 2vw 3vh 3vw;
+    width: 90vw;
+  }
+}
+
+
+@media screen and (max-width:480px) {
+ 
+	/*　画面サイズが480px以下の場合に適用　*/
+ 
+
+  h1.topPage {
+    position: relative;
+    top: 35px;
+    font-size: 2rem;
+    padding: 0.2em 0.5em;
+    background-color: orange;
+    color: white;
+    font-weight: lighter;
+    box-shadow: 0 0 4px rgb(0 0 0 / 56%);
+    text-align: center;
+    z-index: 1;
+}
+
+.sloganText {
+  position: relative;
+  left: 0px;
+  bottom: 20px;
+}
+
+h2.topPage {
+  font-size: 10px;
+  text-align: center;
+}
+
+.Srg:after {
+  right: -20px;
+  border-right-width: 15px;
+  border-right-color: transparent;
+}
+
+.Srg:before {
+  left: -20px;
+  border-left-width: 15px;
+  border-left-color: transparent;
+}
+
+.slogan {
+  position: absolute;
+  margin-left: calc(50% - 50vw);
+  margin: 15px;
+  width: 90%;
+  height: 90%;
+}
+
+
+// .timeTablePosition {
+//   width: 80%;
+//   position: relative;
+//   left: 0rem;
+//   bottom: 100rem;
+//   z-index: 4;
+// }
+
+// .timeTable{
+//   display: flex;
+//   flex-direction: row;
+// }
+
+
+.timeBackground{
+  position: relative;
+  width: 100%;
+  height: 1800px;
+  background: orange;
+  top: 20rem;
+ z-index: auto;
+}
+
+.timeTableTopPosition{
+  position: relative;
+  bottom: 20rem;
+}
+
+.whiteBackground{
+  position: relative;
+  width: 100%;
+  height: 2000px;
+  background: rgba(255, 255, 255, 0.651);
+  top: 90rem;
+ z-index: auto;
+}
+
+.planGrope{
+  width: 100%;
+}
+
+.cornerText{
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.corner{
+  padding: 2rem;
+  color: black;
+  margin: 2rem;
+  border-radius: 3rem;
+}
+
+  .cornerText{
+    padding: 2rem;
+    margin: 2rem;
+}
+
+}
+
+@media screen and (min-width:481px) {
+ 
+	/*　画面サイズが481px以上の場合に適用　*/
+
+
+  .corner{
+    padding: 2rem;
+    color: black;
+    margin: 2rem;
+    width: 30rem;
+    border-radius: 3rem;
+  }
+
+  .cornerText{
+    padding: 2rem;
+    margin: 2rem;
+    width: 30rem;
+  }
+
+}
