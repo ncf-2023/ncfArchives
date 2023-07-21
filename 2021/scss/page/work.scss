@@ -1,0 +1,135 @@
+@import "../style.scss";
+$pc: 920px; // PC
+$tab: 920px; // タブレット
+$sp: 480px; // スマホ
+@mixin pc {
+    @media (min-width: ($pc)) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (max-width: ($tab)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+@mixin ls {
+    @media (orientation: landscape) {
+        @content;
+    }
+}
+
+body {
+    background-color: $main_background;
+}
+
+.worknav {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 100vw;
+    height: 10vh;
+    &__item {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 50vw;
+        gap: 4px 30px;
+    }
+    &__link {
+        text-align: center;
+        @include tab {
+            font-size: 20px;
+        }
+        @include bilo_bold(1.7vw);
+        &:hover {
+            @include hover;
+        }
+        &-active {
+            @include tab {
+                font-size: 20px;
+            }
+            @include bilo_bold(1.7vw);
+            text-shadow: 0px 0px 20px $red_shadow;
+            &:hover {
+                @include hover;
+            }
+        }
+    }
+}
+
+.main {
+    background-color: $main_background;
+}
+
+.work {
+    margin: 0 auto;
+    width: 100vw;
+    margin-bottom: 10vh;
+    max-height: 100vh;
+    background: $header_background;
+    &__text {
+        margin: 0 auto;
+        text-align: center;
+    }
+    &__title {
+        @include bilo_bold(48px);
+        margin: 0;
+        padding: 0;
+        letter-spacing: 0.1rem;
+    }
+    &__name {
+        @include bilo_bold(24px);
+        margin: 0;
+        letter-spacing: 0.1rem;
+    }
+    &__line {
+        width: 40vw;
+        size: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0px 0px 20px $blue_shadow;
+    }
+    &__item {
+        display: block;
+        margin: 0 auto;
+        max-height: 83vh;
+        max-width: 100vw;
+    }
+    &-last {
+        margin-bottom: 0;
+    }
+}
+
+.music {
+    text-align: center;
+    width: 35vw;
+    height: 40vh;
+    margin: 0 auto;
+}
+
+.music {
+    display: block;
+    min-width: 35vw;
+    min-height: 40vh;
+    margin: 0 auto;
+    @include tab() {
+        width: 90vw;
+        height: 40vh;
+        margin: 0 auto;
+    }
+}

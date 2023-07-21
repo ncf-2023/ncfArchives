@@ -1,0 +1,89 @@
+$pc: 920px; // PC
+$tab: 920px; // タブレット
+$sp: 480px; // スマホ
+@mixin pc {
+    @media (min-width: ($pc)) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (max-width: ($tab)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+@mixin ls {
+    @media (orientation: landscape) {
+        @content;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 13vh;
+    background: $header_background;
+    @include bilo_bold(20px);
+    font-size: 20px;
+    &__logo {
+        float: left;
+        width: 15%;
+        margin-left: 2vw;
+        @include tab {
+            display: none;
+        }
+    }
+}
+
+.gnav {
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        padding-top: 5%;
+        margin: 0;
+        margin-right: 2vw;
+        @include tab {}
+    }
+    &__list {
+        @include tab {
+            font-size: 18px;
+            margin: 1px;
+        }
+    }
+    &__link {
+        margin-left: 20px;
+        color: $font;
+        @include tab {
+            margin: 2vw;
+        }
+        &:hover {
+            @include hover;
+        }
+        &-active {
+            margin-left: 20px;
+            color: $font;
+            text-shadow: 0px 0px 10px $red_shadow;
+            &:hover {
+                @include hover;
+            }
+        }
+    }
+    &__icon {
+        width: 2.4vw;
+        padding-right: 5px;
+    }
+    &__line {
+        width: 90%;
+        box-shadow: 0px 0px 10px $blue_shadow;
+    }
+}
